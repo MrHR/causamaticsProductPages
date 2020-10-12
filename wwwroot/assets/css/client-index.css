@@ -1,0 +1,22 @@
+/*
+css regarding client interface (index.html)
+*/
+
+html, 
+body {
+    height: 100vh; /* important for image container and image height */
+    background-color: #F0F0F0;
+}
+
+
+#description {
+    position: absolute;
+    bottom: 5vh;
+    width: 100vw;
+    font-size: 3vh;
+    font-weight: bold;
+    color: #504747;
+    text-align: center;
+    font-family: Tthin;
+    letter-spacing: 2px;
+}

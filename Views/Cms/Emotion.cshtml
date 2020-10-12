@@ -1,0 +1,49 @@
+@model EmotionArchive
+@{
+    ViewData["Title"] = !string.IsNullOrEmpty(Model.MetaTitle) ? Model.MetaTitle : Model.Title;
+    var hasImage = Model.PrimaryImage.HasValue;
+}
+@section head {
+    @WebApp.MetaTags(Model)
+}
+
+<header @(hasImage ? "class=has-image" : "") @(hasImage ? $"style=background-image:url({ @Url.Content(WebApp.Media.ResizeImage(Model.PrimaryImage, 1920, 400)) })" : "")>
+    <div class="dimmer"></div>
+    <div class="container text-center">
+        <h1>@Model.Title</h1>
+        @if (!string.IsNullOrWhiteSpace(Model.Excerpt))
+        {
+            <div class="row justify-content-center">
+                <div class="col-lg-8 lead">
+                    @Html.Raw(Model.Excerpt)
+                </div>
+            </div>
+        }
+    </div>
+</header>
+
+<audio id="player" controls controlsList="nodownload">
+    <source src="~/assets/audio/HOUSE_OF_SUN_y_bourdin_HIBOU537_LC06881_LV.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+</audio>
+
+<div id="image_container">
+    <span class="helper"></span>
+    <img id="animation_image" src="@Url.Content(Model.PrimaryImage)">   
+</div>
+
+<div id="buttons_container">
+    <img onclick="player_rewind()" src="~/assets/img/player/rewind.svg" alt="rewind animation" class="player_button">
+    <img onclick="player_play()" src="~/assets/img/player/play.svg" alt="play animation" class="player_button">
+    <img onclick="player_pause()" src="~/assets/img/player/pause.svg" alt="pause animation" class="player_button">
+</div>
+
+<div id="progressbar"><div id="progress"></div></div>
+
+
+<!--
+<button onclick="startAnimation()">Click me</button>
+<button onclick="pauseAnimation()">Pause</button>
+<button onclick="unpauseAnimation()">Play</button>
+<button onclick="resetAnimation()">Reset</button>
+-->

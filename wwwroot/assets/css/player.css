@@ -1,0 +1,49 @@
+/*
+css regarding music player
+*/
+
+
+/*
+audio player element
+*/
+#player {
+    display: none;
+}
+
+/*
+player buttons container
+*/
+#buttons_container {
+    position: absolute;
+    height: 5vh;
+    top: 5vh;
+    left: 2vh;
+}
+
+/*
+player buttons
+*/
+.player_button {
+    height: 2vw;
+    padding-right: 1vw;
+}
+
+/* 
+container for progress which shows the progress of the player (music & animation)
+*/
+#progressbar {
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    height: 10px;
+    background-color: #bbbbbb;
+}
+  
+/* 
+actual progress of the player
+*/
+#progress {
+    height: 100%;
+    width: 0vw;
+    background-color: #464646;
+}
