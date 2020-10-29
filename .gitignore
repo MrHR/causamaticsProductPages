@@ -4,3 +4,5 @@ bin/
 *.dll
 obj/**
 /bin
+obj/
+/obj
