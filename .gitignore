@@ -1,0 +1,6 @@
+*.cache
+bin/
+*.db
+*.dll
+obj/**
+/bin
