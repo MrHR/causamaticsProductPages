@@ -4,11 +4,11 @@ css regarding fonts
 
 
 @font-face {
-  font-family: Roboto-Regular;
-  src: url(../fonts/Roboto/Roboto-Regular.ttf);
+  font-family: RRegular;
+  src: url("../fonts/Roboto/Roboto-Regular.ttf");
 }
 
 @font-face {
-  font-family: Tthin;
-  src: url(../fonts/Roboto/Roboto-ThinItalic.ttf);
+  font-family: RThin;
+  src: url("../fonts/Roboto/Roboto-Thin.ttf");
 }

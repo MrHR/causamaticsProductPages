@@ -15,22 +15,77 @@ var current_scale = 1; // scale start value
 var timeout = 10; // time between frames
 var timeleft = 0; // time thats left for current animation
 
+/*
 var playlist = [ // animations to play
   ["scale", "+", 0.2, 1],
   ["scale", "-", 0.2, 1],
 
-  ["both", "+", 180, "+", 1.5, 4],
-  ["both", "-", 180, "-", 1.5, 4],
-
   ["rotate", "+", 180, 1],
   ["rotate", "-", 180, 1],
+
+  ["both", "+", 180, "+", 1.5, 4],
+  ["both", "-", 180, "-", 1.5, 4],
 
   ["scale", "+", 0.3, 2],
   ["scale", "-", 0.3, 2],
 
   ["rotate", "+", 360, 2],
   ["rotate", "-", 360, 2]
-];
+]; */
+
+// 3zoom in uit    x     4rot wijzerzin     x     3zoom in uit     x     4 rot tegenwijzerzin     x     3 zoom in uit     x     3 zoom + rot wijzerzin      x     3 rot + zoom tegenwijzerzin
+
+var playlist = [ // animations to play
+  // wait 
+  ["wait", 4],
+
+  // 3 x in en uit
+  ["scale", "+", 0.2, 4],
+  ["scale", "-", 0.2, 4],
+  ["scale", "+", 0.2, 4],
+  ["scale", "-", 0.2, 4],
+  ["scale", "+", 0.2, 4],
+  ["scale", "-", 0.2, 4],
+
+    // 4 x rot wijzerzin
+    ["rotate", "+", 360, 7],
+    ["rotate", "+", 360, 7],
+    ["rotate", "+", 360, 7],
+    ["rotate", "+", 360, 7],
+
+  // 3 x in en uit
+  ["scale", "+", 0.2, 4],
+  ["scale", "-", 0.2, 4],
+  ["scale", "+", 0.2, 4],
+  ["scale", "-", 0.2, 4],
+  ["scale", "+", 0.2, 4],
+  ["scale", "-", 0.2, 4],
+  
+    // 4 x rot tegenwijzerzin
+    ["rotate", "-", 360, 7],
+    ["rotate", "-", 360, 7],
+    ["rotate", "-", 360, 7],
+    ["rotate", "-", 360, 7],
+
+  // 3 x in en uit
+  ["scale", "+", 0.2, 4],
+  ["scale", "-", 0.2, 4],
+  ["scale", "+", 0.2, 4],
+  ["scale", "-", 0.2, 4],
+  ["scale", "+", 0.2, 4],
+  ["scale", "-", 0.2, 4],
+
+
+    // 3 x rot + zoom wijzerzin
+    ["both", "+", 360, "+", 0.2, 7],
+    ["both", "+", 360, "+", 0.2, 7],
+    ["both", "+", 360, "+", 0.2, 7],
+
+    // 3 x rot + zoom tegenwijzerzin
+    ["both", "-", 360, "-", 0.2, 7],
+    ["both", "-", 360, "-", 0.2, 7],
+    ["both", "-", 360, "-", 0.2, 7]
+]; 
 
 var started = false; // started state, if anim has started
 var paused = true; // paused state
@@ -38,6 +93,16 @@ var current_at_pause = ""; // current function to call when paused
 var timeoutFunction; // setTimeout as var
 
 const initial = []; // at start a copy of the playlist and other vars will be stored in here for the reset feature
+
+
+/* 
+animation break, but music continues
+*/
+function wait(time) {
+  // repeat
+  functionToCall = "wait(" + time + ")";
+  repeat(functionToCall);
+}
 
 /* 
 direction = str +/-
@@ -163,10 +228,12 @@ function next() {
       var dir2 = anim[3];
       var factor = anim[4];
       var time = anim[5];
-    } else {
+    } else if (fnstring == "rotate" || fnstring == "scale"){
       var dir = anim[1]; // travel direction
       var end = anim[2]; // travel endpoint
       var time = anim[3]; // total travel time
+    } else if(fnstring == "wait") {
+      var time = anim[1]; // total travel time
     }
 
     if (typeof fn === "function") {
@@ -174,8 +241,10 @@ function next() {
 
       if (fnstring == "both") {
         fn(dir1, deg, dir2, factor, time);
-      } else {
+      } else if(fnstring == "rotate" || fnstring == "scale") {
         fn(dir, end, time); // execute next animation
+      } else if(fnstring == "wait") {
+        fn(time);
       }
     }
     playlist.shift(); // remove first item
@@ -192,7 +261,6 @@ function startAnimation() {
     initial["playlist"] = getCopyOfArray(playlist);
     initial["current_deg"] = current_deg;
     initial["current_scale"] = current_scale;
-    console.log(initial["playlist"]);
 
     started = true;
     paused = false;
@@ -235,7 +303,8 @@ function resetAnimation() {
   current_scale = initial["current_scale"];
 
   playlist = getCopyOfArray(initial["playlist"]);
-
+  console.log("initial:");
+  console.log(initial["playlist"]);
   timeleft = 0;
   paused = true;
   started = false;
@@ -255,3 +324,52 @@ get a non referenced copy of array
 function getCopyOfArray(arr) {
   return JSON.parse(JSON.stringify(arr));
 }
+
+
+
+/*
+get total length (seconds) of animation playlist
+
+function getPlaylistTotalLength() {
+  totaal = 0;
+  list = initial["playlist"];
+  console.log(playlist.length);
+  for(i=0; i< list.length; i++) {
+    totaal += list[i][list[i].length-1] * 1000; // get laatste element aka tijd * 1000 ms
+  }
+  return totaal;
+}*/
+
+
+/*
+
+
+function move_animation(seconds) {
+  list = getCopyOfArray(initial["playlist"]);
+  totaal = 0;
+  i = 0;
+
+  while(totaal + list[i][list[i].length-1] <= seconds) { //} && i < list.length) {
+    totaal += list[i][list[i].length-1];
+
+    if(i >= list.length-1) break;
+    i++;
+  } 
+
+  console.log(seconds);
+  console.log(totaal);
+  console.log(i);
+
+  resetAnimation();
+
+  for(ri=0; ri<=i; ri++) {
+    playlist.shift();
+  }
+
+  if(playlist.length != 0) {
+    verschil = parseInt((seconds-totaal) * 100) * 10; // first * 100 and afterwords * 10 so it's always dividable by 10
+    timeleft = verschil * -1;
+  }
+  //console.log(playlist);
+
+}*/

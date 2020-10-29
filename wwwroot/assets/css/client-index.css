@@ -1,14 +1,35 @@
 /*
 css regarding client interface (index.html)
 */
-#description {
-    position: absolute;
-    bottom: 5vh;
+
+html, 
+body {
+    height: 100vh; /* important for image container and image height */
+}
+
+
+
+#description_container {
+    position: fixed;
+    background-color: rgb(255,255,255,0.6);
     width: 100vw;
+    z-index: 4;
+    bottom: 0px;
+    
+    /*-webkit-box-shadow: inset 0px 5px 9px -6px rgba(0,0,0,0.75);
+    -moz-box-shadow: inset 0px 5px 9px -6px rgba(0,0,0,0.75);
+    box-shadow: inset 0px 5px 9px -6px rgba(0,0,0,0.75);*/
+
+}
+
+#description {
+    width: 88vw;
     font-size: 3vh;
-    font-weight: bold;
-    color: #504747;
+    color: #646464;
     text-align: center;
-    font-family: Tthin;
+    font-family: RThin;
     letter-spacing: 2px;
+    text-shadow: none;
+    margin: 0px 5vw;
+    margin-bottom: 3vh;
 }
