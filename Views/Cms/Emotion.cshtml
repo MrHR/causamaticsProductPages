@@ -6,22 +6,6 @@
 @section head {
     @WebApp.MetaTags(Model)
 }
-
-<header @(hasImage ? "class=has-image" : "") @(hasImage ? $"style=background-image:url({ @Url.Content(WebApp.Media.ResizeImage(Model.PrimaryImage, 1920, 400)) })" : "")>
-    <div class="dimmer"></div>
-    <div class="container text-center">
-        <h1>@Model.Title</h1>
-        @if (!string.IsNullOrWhiteSpace(Model.Excerpt))
-        {
-            <div class="row justify-content-center">
-                <div class="col-lg-8 lead">
-                    @Html.Raw(Model.Excerpt)
-                </div>
-            </div>
-        }
-    </div>
-</header>
-
 <audio id="player" controls controlsList="nodownload">
     <source src="~/assets/audio/HOUSE_OF_SUN_y_bourdin_HIBOU537_LC06881_LV.mp3" type="audio/mpeg">
     Your browser does not support the audio element.
@@ -30,6 +14,17 @@
 <div id="image_container">
     <span class="helper"></span>
     <img id="animation_image" src="@Url.Content(Model.PrimaryImage)">   
+</div>
+
+<div id="description">
+    @if (!string.IsNullOrWhiteSpace(Model.Excerpt))
+    {
+        <div class="row justify-content-center">
+            <div class="col-lg-8 lead">
+                @Html.Raw(Model.Excerpt)
+            </div>
+        </div>
+    }
 </div>
 
 <div id="buttons_container">
