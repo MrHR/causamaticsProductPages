@@ -11,16 +11,22 @@ body {
 
 #description_container {
     position: fixed;
-    background-color: rgb(255,255,255,0.6);
+    background-color: rgb(255,255,255,0.4);
     width: 100vw;
     z-index: 4;
-    bottom: 0px;
-    
-    /*-webkit-box-shadow: inset 0px 5px 9px -6px rgba(0,0,0,0.75);
-    -moz-box-shadow: inset 0px 5px 9px -6px rgba(0,0,0,0.75);
-    box-shadow: inset 0px 5px 9px -6px rgba(0,0,0,0.75);*/
-
+    /*bottom: 0px;*/
 }
+
+    #description_container { /* rearrangement */
+        width: 48vw;
+        left: 50vw;
+        margin-left: -25vw;
+        /*bottom: 6vh;*/
+        top: 80vh;
+        padding: 1vw;
+        border-radius: 4px;
+        position: absolute;
+    }
 
 #description {
     width: 88vw;
@@ -33,3 +39,20 @@ body {
     margin: 0px 5vw;
     margin-bottom: 3vh;
 }
+
+    #description { /* rearrangement */
+        width: 100%;
+        margin: 0px;
+    }
+
+
+    @media only screen and (max-height: 600px) {
+        #description_container {
+            top: 80vh;
+            width: 48vw;
+        }
+
+        #description { 
+            margin: 0px;
+        }
+    }
