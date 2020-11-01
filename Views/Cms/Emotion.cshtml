@@ -60,3 +60,10 @@ Your browser does not support the audio element.
 <div id="tilt_overlay">
     <img src="ui-img/tilt.png">
 </div>
+
+
+<!-- emotion title -->
+@if (!string.IsNullOrWhiteSpace(Model.Emotion.EmotionPretty)) 
+{ 
+    <p id="emotion_title">@Html.Raw(Model.Emotion.EmotionPretty)</p>
+}
