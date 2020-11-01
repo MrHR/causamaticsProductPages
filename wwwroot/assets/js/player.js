@@ -24,7 +24,6 @@ function player_play() {
 
     if(!wentFullscreenOnStartup) {
         toggleFullScreen();
-        wentFullscreenOnStartup = true;
     }
 }
 
