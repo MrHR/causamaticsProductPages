@@ -15,10 +15,9 @@ toggle full screen by clicking on image container (once at startup)
 */
 wentFullscreenOnStartup = false;
 document.getElementById("image_container").onclick = function() {
-if(!wentFullscreenOnStartup) {
-  toggleFullScreen();
-  wentFullscreenOnStartup = true;
-}
+  if(!wentFullscreenOnStartup) {
+    toggleFullScreen();
+  }
 }
 
 
@@ -37,6 +36,7 @@ function toggleFullScreen() {
   if(!doc.fullscreenElement && !doc.mozFullScreenElement && !doc.webkitFullscreenElement && !doc.msFullscreenElement) {
       requestFullScreen.call(docEl);
       document.getElementById("toggle_button").classList.add("player_button_active");
+      wentFullscreenOnStartup = true;
   }
   else {
       cancelFullScreen.call(doc);

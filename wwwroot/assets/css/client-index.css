@@ -8,6 +8,16 @@ body {
 }
 
 
+* {
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+}
+
 
 #description_container {
     position: fixed;
@@ -33,7 +43,7 @@ body {
     font-size: 3vh;
     color: #646464;
     text-align: center;
-    font-family: RThin;
+    font-family: PThin;
     letter-spacing: 2px;
     text-shadow: none;
     margin: 0px 5vw;
@@ -56,3 +66,15 @@ body {
             margin: 0px;
         }
     }
+
+
+ #emotion_title {   
+    position: absolute; 
+    left:2vw;
+    top:1vh;
+    color: rgba(255,255,255,0.5); 
+    font-weight:bold; 
+    font-size:2vh;
+    z-index: 8;
+    font-family: PBold;
+}

@@ -11,6 +11,8 @@ namespace causamaticsProductPages.Models
     {
         public class EmotionRegion
         {
+            [Field(Placeholder = "Benaming emotie")]
+            public TextField EmotionPretty { get; set; }
             [Field(Placeholder = "De geanimeerde afbeelding")]
             public ImageField Afbeelding { get; set; }
             [Field(Placeholder = "De achtergrond kleur")]
