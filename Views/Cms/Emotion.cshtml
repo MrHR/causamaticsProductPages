@@ -31,11 +31,11 @@ Your browser does not support the audio element.
 
 <!-- player buttons -->
 <div id="buttons_container" onkeypress="keypressed(event)">
-    <img onclick="player_rewind()" src="ui-img/rewind.svg" alt="rewind animation" class="player_button">
-    <img onclick="player_play()" src="ui-img/play.svg" alt="play animation" class="player_button" id="play_button">
-    <img onclick="player_pause()" src="ui-img/pause.svg" alt="pause animation" class="player_button" id="pause_button">
-    <img onclick="mute()" src="ui-img/mute.svg" alt="mute animation" class="player_button" id="mute_button">
-    <img onclick="toggleFullScreen()" src="ui-img/fullscreen.svg" alt="enter or exit fullscreen" class="player_button" id="toggle_button">
+    <img onclick="player_rewind()" src="~/assets/ui-img/rewind.svg" alt="rewind animation" class="player_button">
+    <img onclick="player_play()" src="~/assets/ui-img/play.svg" alt="play animation" class="player_button" id="play_button">
+    <img onclick="player_pause()" src="~/assets/ui-img/pause.svg" alt="pause animation" class="player_button" id="pause_button">
+    <img onclick="mute()" src="~/assets/ui-img/mute.svg" alt="mute animation" class="player_button" id="mute_button">
+    <img onclick="toggleFullScreen()" src="~/assets/ui-img/fullscreen.svg" alt="enter or exit fullscreen" class="player_button" id="toggle_button">
 </div>
 
 <!-- player text -->
@@ -51,12 +51,12 @@ Your browser does not support the audio element.
 
 <!-- stay awake -->
 <video autoplay="true" muted="muted" loop>
-    <source src="vid/blank.m4v" type="video/mp4">
-    <source src="vid/blank.ogv" type="video/ogg">
-    <source src="vid/blank.webm" type="video/webm">
+    <source src="~/assets/vid/blank.m4v" type="video/mp4">
+    <source src="~/assets/vid/blank.ogv" type="video/ogg">
+    <source src="~/assets/vid/blank.webm" type="video/webm">
 </video>
 
 <!-- tilt screen overlay when in portrait mode -->
 <div id="tilt_overlay">
-    <img src="ui-img/tilt.png">
+    <img src="~/assets/ui-img/tilt.png">
 </div>
