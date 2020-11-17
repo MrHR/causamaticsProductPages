@@ -45,6 +45,18 @@ z-index: 1;
 }
 
 /*
+background: variable color tone gradient which gives color to the trance animation  
+*/
+#color_gradient {
+position: absolute;
+width: 100vw;
+height: 100vh;
+top: 0px;
+left: 0px;
+z-index: 1;
+}
+
+/*
 background: transparent overlay lines that align with trance animation
 */
 #overlay_lines {

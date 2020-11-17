@@ -22,15 +22,17 @@ body {
 #description_container {
     position: fixed;
     background-color: rgb(255,255,255,0.4);
-    width: 100vw;
+    /*width: 100vw;*/
     z-index: 4;
     /*bottom: 0px;*/
 }
 
     #description_container { /* rearrangement */
-        width: 48vw;
+        /*width: 48vw;*/
         left: 50vw;
-        margin-left: -25vw;
+        /*margin-left: -25vw;*/
+        width: 80vw;
+        margin-left: -40vw;
         /*bottom: 6vh;*/
         top: 80vh;
         padding: 1vw;
@@ -39,7 +41,7 @@ body {
     }
 
 #description {
-    width: 88vw;
+    /*width: 88vw;*/
     font-size: 3vh;
     color: #646464;
     text-align: center;
