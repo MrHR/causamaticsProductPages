@@ -21,6 +21,8 @@ namespace causamaticsProductPages.Models
             public TextField Quote { get; set; }
             [Field]
             public AudioField Audio { get; set; }
+            [Field(Placeholder = "CSS code voor achtergrond gradient.")]
+            public TextField Gradient { get; set; }
         }
 
         [Region]
