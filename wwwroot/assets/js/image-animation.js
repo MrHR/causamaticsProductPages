@@ -45,11 +45,22 @@ var timeleft = 0; // time thats left for current animation
 */
 
 var playlist = [ // animations to play
+  // wait 
+  ["wait", 4],
 
-    ["rotate", "+", 360, 4],
-    ["rotate", "+", 360, 3],
-    ["rotate", "+", 360, 3],
-    ["rotate", "+", 360, 4],
+  // 3 x in en uit
+  ["scale", "+", 0.2, 4],
+  ["scale", "-", 0.2, 4],
+  ["scale", "+", 0.2, 4],
+  ["scale", "-", 0.2, 4],
+  ["scale", "+", 0.2, 4],
+  ["scale", "-", 0.2, 4],
+
+    // 4 x rot wijzerzin
+    ["rotate", "+", 360, 7],
+    ["rotate", "+", 360, 7],
+    ["rotate", "+", 360, 7],
+    ["rotate", "+", 360, 7],
 
   // 3 x in en uit
   ["scale", "+", 0.2, 4],
