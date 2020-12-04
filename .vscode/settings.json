@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/ba9631b9-dcab-4101-b66c-cf5b0dccdfc0/resourceGroups/Causamatics/providers/Microsoft.Web/sites/Causamaticsemotionpages",
+    "appService.deploySubpath": "bin\\Release\\netcoreapp3.1\\win-x86\\publish"
+}

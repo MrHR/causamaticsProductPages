@@ -3,8 +3,8 @@ css regarding image animation
 */
 
 body {
-    padding: 0px;
-    margin: 0px;
+  padding: 0px;
+  margin: 0px;
 }
 
 
@@ -12,63 +12,90 @@ body {
 container for animation image
 */
 #image_container {
-          position: absolute;
-          width: 100vw;
-          height: 100vh;
-          top: 0;
-          left: 0;
+position: absolute;
+width: 100vw;
+height: 100vh;
+top: 0;
+left: 0;
 
-  overflow: hidden;
-  text-align:center;
+overflow: hidden;
+text-align:center;
 
-  margin-left: auto;
-  margin-right: auto;
-  height: 84vh;
-  z-index: 3;
+margin-left: auto;
+margin-right: auto;
+height: 84vh;
+z-index: 3;
 }
 
+/*
+background: variable color tone animation which gives color to the trance animation  
+*/
 #color_tone {
-  position: absolute;
-  width: 100vw;
-  height: 116vh;
-  top: -16vh;
-  left: 0;
-  background-image: url('../img/color-tone.png');
-  background-repeat: no-repeat;
-  background-position-y: center;
-  background-position-x: center;
-  background-size: cover;
-  z-index: 1;
+position: absolute;
+width: 100vw;
+height: 116vh;
+top: -16vh;
+left: 0;
+/*background-image: url('../img/color-tone.png');*/
+background-repeat: no-repeat;
+background-position-y: center;
+background-position-x: center;
+background-size: cover;
+z-index: 1;
 }
 
+/*
+background: variable color tone gradient which gives color to the trance animation  
+*/
+#color_gradient {
+position: absolute;
+width: 100vw;
+height: 100vh;
+top: 0px;
+left: 0px;
+z-index: 1;
+}
+
+/*
+background: transparent overlay lines that align with trance animation
+*/
 #overlay_lines {
-  position: absolute;
-  width: 100vw;
-  height: 116vh;
-  top: -16vh;
-  left: 0;
-  background-image: url('../img/lines-overlay.png');
-  background-repeat: no-repeat;
-  background-position-y: center;
-  background-position-x: center;
-  background-size: cover;
-  opacity: 0.3;
-  z-index: 1;
+position: absolute;
+width: 100vw;
+height: 116vh;
+top: -16vh;
+left: 0;
+background-image: url('../ui-img/lines-overlay.png');
+background-repeat: no-repeat;
+background-position-y: center;
+background-position-x: center;
+background-size: cover;
+opacity: 0.3;
+z-index: 1;
 }
 
+/*
+background: trance gif animation
+*/
 #trance_gif{
-  position: absolute;
-  width: 100vw;
-  height: 116vh;
-  top: -16vh;
-  left: 0;
-  background-image: url('../img/trance.gif');
-  background-repeat: no-repeat;
-  background-position-y: center;
-  background-position-x: center;
-  background-size: cover;
-  z-index: 2;
-  opacity: 0.1;
+position: absolute;
+width: 100vw;
+height: 116vh;
+top: -16vh;
+left: 0;
+background-image: url('../ui-img/trance.gif');
+background-repeat: no-repeat;
+background-position-y: center;
+background-position-x: center;
+background-size: cover;
+z-index: 2;
+opacity: 0.1;
+}
+
+
+#image_container, #color_tone, #overlay_lines, #trance_gif  { /* rearrangement */
+  top: -8vh;
+  height: 108vh;
 }
 
 
@@ -76,20 +103,20 @@ container for animation image
 animation image
 */
 #animation_image {
-  height: 60%;
-  vertical-align: middle;
-  border-radius: 0vh;
-  /*margin-left:-1%;*/
-  border: 0.6vh solid rgba(255, 255,255, 0.2);
+height: 50%;
+vertical-align: middle;
+border-radius: 0vh;
+/*margin-left:-1%;*/
+border: 0.6vh solid rgba(255, 255,255, 0.2);
 }
 
 /* 
 helps image centering vertically in image_container 
 */
 .helper {
-    display: inline-block;
-    height: 100%;
-    vertical-align: middle;
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
 }
 
 
@@ -97,26 +124,39 @@ helps image centering vertically in image_container
 tilt overlay
 */
 #tilt_overlay {
-  display: none;
-  position: absolute;
-  width: 100vw;
-  height: 100vh;
-  top: 0;
-  left: 0;
-  text-align: center;
-  z-index: 6;
-  background-color: #e5e5e5;
+display: none;
+position: absolute;
+width: 100vw;
+height: 100vh;
+top: 0;
+left: 0;
+text-align: center;
+z-index: 8;
+background-color: #e5e5e5;
 }
 
-  #tilt_overlay img {
-    height: 40vh;
-    margin-top: 25vh;
-  }
+#tilt_overlay img {
+  height: 40vh;
+  margin-top: 25vh;
+}
 
 
 @media only screen and (max-width: 600px) {
 /*@media screen and (orientation:portrait) {*/
-  #tilt_overlay {
-    display: inline;
-  }
+#tilt_overlay {
+  display: inline;
+}
+
+#image_container, #color_tone, #overlay_lines, #trance_gif {
+  height: 100vh;
+  width: 100vw;
+}
+
+#buttons_container {
+  display: none;
+}
+
+#description_container {
+  display: none;
+}
 }

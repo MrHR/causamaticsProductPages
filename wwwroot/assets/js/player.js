@@ -24,7 +24,6 @@ function player_play() {
 
     if(!wentFullscreenOnStartup) {
         toggleFullScreen();
-        wentFullscreenOnStartup = true;
     }
 }
 
@@ -61,6 +60,8 @@ function player_rewind() {
 mute player
 */
 function mute() {
+    document.getElementById("image_container").focus();
+
     if(muted) {
         player.muted = false;
         document.getElementById("mute_button").classList.remove("player_button_active");
@@ -70,6 +71,7 @@ function mute() {
         muted = true;
         document.getElementById("mute_button").classList.add("player_button_active");
     }
+
 }
 
 /*
@@ -86,6 +88,12 @@ player.ontimeupdate = function() {
     showProgress(player.currentTime);
 };
 
+/*
+reset player on end
+*/
+player.onended = function() {
+    player_rewind();
+}
 
 /* 
 show progress with progressbar
@@ -94,72 +102,13 @@ function showProgress(currentTime) {
     if(!audioLength.isNaN) {
         percentage = currentTime / audioLength * 100;
         progress.style.width = percentage + "%";
-        //$("#progressbar").val(percentage).slider("refresh");
     }
 }
 
 
 /*
-function getWidth(elem) {
-    return elem.offsetWidth;
-}
-
-
-pb = document.getElementById("progressbar");
-p = document.getElementById("progress");
-
-console.log("total w: " + getWidth(pb));
-
-
-$('#progress').resizable({
-    handles: "e",
-    create: function( event, ui ) {
-        // Prefers an another cursor with two arrows
-        $(".ui-resizable-e").css("cursor","pointer");
-    }
-});
-
-$('#progress').on('resize', function() {
-    console.log(getWidth(p));
-});
-
-
-$(document).ready(function() {
-    $( "#progressbar" ).on( "change", function() {
-        
-            //percentage = $("#progressbar").val();
-            //console.log(percentage / 100 * audioLength);
-        
-    });
-
-    // desktop
-    $("#progressbar").parent().mousedown(function() {
-        player_pause();
-        $("#image_container").css('background-color','blue');
-    });
-
-    $("#progressbar").parent().mouseup(function() {
-        percentage = $("#progressbar").val();
-        seconds = player.duration / 100 * percentage;
-        player.currentTime = seconds;
-        move_animation(seconds);
-        $("#image_container").css('background-color','white');
-        player_play();
-    });
-
-    // mobile
-    $("#progressbar").parent().on("touchstart", function() {
-        player_pause();
-        $("#image_container").css('background-color','blue');
-    });
-
-    $("#progressbar").parent().on("touchend", function() {
-        player_play();
-        $("#image_container").css('background-color','white');
-    });
-});
+play/pause by pressing spacebar
 */
-
 document.onkeydown = function(evt) {
     evt = evt || window.event;
     if (evt.code === "Space") {
@@ -170,10 +119,3 @@ document.onkeydown = function(evt) {
         }
     }
 };
-
-
-
-/*
-keep screen awake hack
-*/
-
