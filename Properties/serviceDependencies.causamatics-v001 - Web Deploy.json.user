@@ -1,0 +1,30 @@
+{
+  "dependencies": {},
+  "parameters": {
+    "subscriptionId": {
+      "Name": "subscriptionId",
+      "Type": "subscription",
+      "Value": "ba9631b9-dcab-4101-b66c-cf5b0dccdfc0"
+    },
+    "causamatics-v001.subscriptionId": {
+      "Name": "causamatics-v001.subscriptionId",
+      "Type": "subscription",
+      "Value": "ba9631b9-dcab-4101-b66c-cf5b0dccdfc0"
+    },
+    "causamatics-v001.resourceName": {
+      "Name": "causamatics-v001.resourceName",
+      "Type": null,
+      "Value": "causamatics-v001"
+    },
+    "causamatics-v001.resourceGroupLocation": {
+      "Name": "causamatics-v001.resourceGroupLocation",
+      "Type": null,
+      "Value": "westeurope"
+    },
+    "causamatics-v001.resourceGroupName": {
+      "Name": "causamatics-v001.resourceGroupName",
+      "Type": "resourceGroup",
+      "Value": "Causamatics_linux"
+    }
+  }
+}

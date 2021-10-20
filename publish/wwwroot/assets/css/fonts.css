@@ -1,0 +1,30 @@
+/*
+css regarding fonts
+*/
+
+/*
+@font-face {
+  font-family: RRegular;
+  src: url("../fonts/Roboto/Roboto-Regular.ttf");
+}
+
+@font-face {
+  font-family: RThin;
+  src: url("../fonts/Roboto/Roboto-Thin.ttf");
+}
+*/
+
+@font-face {
+  font-family: PBold;
+  src: url("../fonts/Proxima/Proxima\ Nova\ Alt\ Bold.otf") format("opentype");
+}
+
+@font-face {
+  font-family: PRegular;
+  src: url("../fonts/Proxima/ProximaNova-Regular.otf") format("opentype");
+}
+
+@font-face {
+  font-family: PThin;
+  src: url("../fonts/Proxima/Proxima\ Nova\ Alt\ Thin.otf") format("opentype");
+}

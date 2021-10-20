@@ -1,5 +1,10 @@
 # Readme
 
+## create application
+1. In Terminal:
+````
+dotnet new pirahna.mvc
+````
 ## Start application
 
  1. In terminal/cmd navigate to project directory.
