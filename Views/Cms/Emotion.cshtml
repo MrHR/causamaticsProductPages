@@ -16,7 +16,10 @@
 @if (!string.IsNullOrWhiteSpace(Model.Emotion.Gradient)) 
 { 
     <div id="color_gradient" style='@Html.Raw(Model.Emotion.Gradient)'></div>
-} 
+} else {
+    <div id="color_tone" style="background-image: url('@Url.Content(Model.Emotion.ColorTone)');"></div>
+}
+
 <div id="trance_gif"></div>
 <div id="overlay_lines"></div>
 
