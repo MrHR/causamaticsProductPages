@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA/Mr19TE3uEC8Tel6WGVtAQAAAAACAAAAAAAQZgAAAAEAACAAAAAis5xEkcJoiPRHyTdV3lVvhokSVxfMBYmmsn2a9srBPQAAAAAOgAAAAAIAACAAAAAVek7KBi9frE067/Olz+bmSvlzyVUHi67SuVsFGRXyxoAAAAAesYxXHqLBPVN50rd02z4qe8XTECnfppKeARk856WWvurOnuZcwAPoPLHcfiIg6jNGW2rM6d6/vYlD6fbSnLhoX6ZBZMBQenkaxHlff5+n3fsTlew6TY0J1c73MwH58zq06Ib8BO2pmTDhzLQQ+B845x0BRXMHuxj2XVLZwpwMY0AAAACQlIbHsZrSLvTC0EHOc8doQKhGx6uhKTMaMZwUuyU3pvg4JDQJ5/czWrmUwdwU0TIxKlKLqyKZHlbdgdPAQIRh</EncryptedPassword>
+  </PropertyGroup>
+  <ItemGroup>
+    <DestinationConnectionStrings Include="piranha">
+      <Value>Filename=./piranha.db</Value>
+    </DestinationConnectionStrings>
+  </ItemGroup>
+</Project>
