@@ -7,3 +7,5 @@ obj/
 /obj
 *.csproj
 causamatics.zip
+.vs
+Properties
